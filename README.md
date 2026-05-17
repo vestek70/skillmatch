@@ -1,11 +1,11 @@
 # SkillMatch JS
 
-## 📌 Sobre o Projeto
+##  Sobre o Projeto
 O **SkillMatch JS** é um simulador de compatibilidade de competências desenvolvido em JavaScript puro. O objetivo principal do sistema é comparar o perfil de habilidades de um candidato com os requisitos de diversas vagas de tecnologia (focadas em Front-End Júnior), classificando o nível de afinidade e gerando recomendações automatizadas de estudo.
 
 ---
 
-## 🎯 Objetivos de Aprendizado (Módulo 01)
+##  Objetivos de Aprendizado (Módulo 01)
 Este projeto prático foi estruturado para consolidar os seguintes conceitos:
 - **Lógica de Programação & Condicionais:** Classificação de compatibilidade (Alta, Média, Baixa).
 - **Manipulação Avançada de Arrays:** Uso obrigatório de métodos iterativos (`map`, `filter`, `reduce`).
@@ -16,14 +16,14 @@ Este projeto prático foi estruturado para consolidar os seguintes conceitos:
 
 ---
 
-## 🌐 Conceitos de Redes Aplicados
+##  Conceitos de Redes Aplicados
 Como requisito técnico do projeto, foi feita uma analogia com a **Arquitetura Cliente-Servidor** e o funcionamento da internet:
 - Na internet, quando preenchemos um formulário ou buscamos dados, o *Cliente* (navegador) faz uma requisição HTTP para um *Servidor*, que processa e devolve uma resposta.
 - No código deste projeto, a função `buscarVagasSimuladas()` utiliza uma **Promise** combinada com `setTimeout` para simular exatamente esse comportamento: um atraso de rede ao buscar a lista de vagas hospedada em um "servidor fictício" antes de exibi-las na tela para o usuário.
 
 ---
 
-## 🚀 Como Executar o Projeto
+##  Como Executar o Projeto
 O projeto foi desenvolvido para rodar de forma simples e direta, sem a necessidade de instalar o Node.js.
 
 1. Abra o navegador **Google Chrome**.
@@ -34,7 +34,7 @@ O projeto foi desenvolvido para rodar de forma simples e direta, sem a necessida
 
 ---
 
-## 🛠️ Ferramentas Utilizadas
+##  Ferramentas Utilizadas
 - **Editor de Código:** VS Code
   - *Extensões utilizadas/recomendadas:* Live Server, ESLint, e JavaScript (ES6) code snippets.
 - **Controle de Versão:** Git & GitHub
@@ -42,10 +42,10 @@ O projeto foi desenvolvido para rodar de forma simples e direta, sem a necessida
 
 ---
 
-## 🔗 Links do Projeto
+##  Links do Projeto
 
 - **Quadro Kanban (Trello):** https://trello.com/invite/b/6a09dbd712664b9d9c68cb7d/ATTIb763ec6a023c4defeedf4096a03c02589F64AE47/skillmatch-js-simulador-de-compatibilidade-com-vaga-front-end-junior 
 - **Vídeo de Apresentação:** [COLE_AQUI_O_LINK_DO_SEU_VIDEO_NO_GOOGLE_DRIVE]
 
 ---
-Developed by **Konstantin Borisov** 🚀
+Developed by **Konstantin Borisov** 
