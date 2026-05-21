@@ -44,8 +44,10 @@ Ferramentas Utilizadas
 
  Links do Projeto
 
-- Quadro Kanban (Trello): https://trello.com/invite/b/6a09dbd712664b9d9c68cb7d/ATTIb763ec6a023c4defeedf4096a03c02589F64AE47/skillmatch-js-simulador-de-compatibilidade-com-vaga-front-end-junior 
-- Vídeo de Apresentação:** [COLE_AQUI_O_LINK_DO_SEU_VIDEO_NO_GOOGLE_DRIVE]
+-
+- **Repositório GitHub:** https://github.com/vestek70/skillmatch.git
+- **Quadro Kanban (Trello):** https://trello.com/invite/b/6a09dbd712664b9d9c68cb7d/ATTIb763ec6a023c4defeedf4096a03c02589F64AE47/skillmatch-js-simulador-de-compatibilidade-com-vaga-front-end-junior 
+- **Vídeo de Apresentação:** https://drive.google.com/file/d/1CQAxXs_Y2JoOaqMmAOkQXWZCrNGn6vnK/view?usp=sharing
 
 ---
 Developed by Konstantin Borisov
