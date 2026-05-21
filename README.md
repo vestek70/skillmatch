@@ -36,7 +36,7 @@ O projeto foi desenvolvido para rodar de forma simples e direta, sem a necessida
 
 Ferramentas Utilizadas
 - Editor de Código: VS Code
-  - *xtensões utilizadas/recomendadas: Live Server, ESLint, e JavaScript (ES6) code snippets.
+  xtensões utilizadas/recomendadas: Live Server, ESLint, e JavaScript (ES6) code snippets.
 - Controle de Versão: Git & GitHub
 - Gestão de Tarefas (Kanban): Trello
 
