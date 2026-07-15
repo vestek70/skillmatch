@@ -1,0 +1,132 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f5f7;
+    color: #1f2933;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header,
+footer {
+    background-color: #1f2933;
+    color: #ffffff;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem 1rem;
+}
+
+section {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+    padding: 2rem;
+    width: 100%;
+    max-width: 480px;
+}
+
+.secao-vagas {
+    max-width: 960px;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+
+label {
+    margin-bottom: 0.4rem;
+    font-weight: bold;
+}
+
+input {
+    padding: 0.6rem;
+    border: 1px solid #cbd2d9;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+button {
+    background-color: #2563eb;
+    color: #ffffff;
+    border: none;
+    padding: 0.7rem 1.2rem;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #1d4ed8;
+}
+
+#mensagem-status {
+    margin-top: 1rem;
+    color: #15803d;
+    font-weight: bold;
+}
+
+#status-vagas {
+    margin-bottom: 1rem;
+    font-style: italic;
+    color: #52606d;
+}
+
+/* Mobile-first: uma coluna por padrão, cartões ganham largura fixa a partir de telas maiores */
+.vagas-lista {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.vaga-card {
+    flex: 1 1 100%;
+    border: 1px solid #cbd2d9;
+    border-radius: 8px;
+    padding: 1rem;
+}
+
+@media (min-width: 640px) {
+    .vaga-card {
+        flex: 1 1 260px;
+    }
+}
+
+.vaga-card h3 {
+    margin-top: 0;
+}
+
+.vaga-card__compatibilidade {
+    font-weight: bold;
+}
+
+.vaga-card__compatibilidade--alta {
+    color: #15803d;
+}
+
+.vaga-card__compatibilidade--media {
+    color: #b45309;
+}
+
+.vaga-card__compatibilidade--baixa {
+    color: #b91c1c;
+}
+
+.vaga-card__habilidades ul {
+    margin: 0.3rem 0 0.8rem;
+    padding-left: 1.2rem;
+}
