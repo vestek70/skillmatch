@@ -14,10 +14,17 @@ body {
 
 header,
 footer {
-    background-color: #1f2933;
-    color: #ffffff;
+    background-color: #ffffff;
+    color: #1f2933;
     padding: 1.5rem;
     text-align: center;
+    border-bottom: 1px solid #e4e7eb;
+}
+
+footer {
+    border-bottom: none;
+    border-top: 1px solid #e4e7eb;
+    color: #52606d;
 }
 
 .logo {
