@@ -75,3 +75,9 @@ export function analisarVagas(vagasDados, habilidadesCandidato) {
         return { vaga, numeroAnalise, ...compatibilidade };
     });
 }
+
+export function encontrarMelhorVaga(resultados) {
+    return resultados.reduce((melhor, atual) =>
+        atual.percentual > melhor.percentual ? atual : melhor
+    );
+}

@@ -2,6 +2,16 @@ export function exibirStatusVagas(elementoStatus, mensagem) {
     elementoStatus.textContent = mensagem;
 }
 
+export function exibirMelhorVaga(elementoMelhorVaga, resultado) {
+    if (!resultado) {
+        elementoMelhorVaga.textContent = "";
+        return;
+    }
+
+    const { vaga, percentual } = resultado;
+    elementoMelhorVaga.textContent = `Vaga mais compatível: ${vaga.cargo} — ${vaga.empresa} (${percentual}%)`;
+}
+
 export function renderizarVagas(container, resultados) {
     container.innerHTML = "";
 

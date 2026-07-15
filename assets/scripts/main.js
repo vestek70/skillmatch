@@ -1,6 +1,6 @@
 import { salvarCandidato, carregarCandidato, carregarVagas } from "./dados.js";
-import { analisarVagas } from "./motor.js";
-import { renderizarVagas, exibirStatusVagas } from "./ui.js";
+import { analisarVagas, encontrarMelhorVaga } from "./motor.js";
+import { renderizarVagas, exibirStatusVagas, exibirMelhorVaga } from "./ui.js";
 
 const formulario = document.getElementById("form-candidato");
 const campoNome = document.getElementById("nome");
@@ -11,6 +11,7 @@ const mensagemStatus = document.getElementById("mensagem-status");
 
 const containerVagas = document.getElementById("lista-vagas");
 const statusVagas = document.getElementById("status-vagas");
+const melhorVagaElemento = document.getElementById("melhor-vaga");
 
 function converterHabilidadesParaArray(textoHabilidades) {
     return textoHabilidades
@@ -29,6 +30,7 @@ function preencherFormulario(candidato) {
 async function carregarEExibirVagas(candidato) {
     containerVagas.innerHTML = "";
     exibirStatusVagas(statusVagas, "Carregando vagas...");
+    exibirMelhorVaga(melhorVagaElemento, null);
 
     try {
         const vagasCarregadas = await carregarVagas();
@@ -48,6 +50,10 @@ async function carregarEExibirVagas(candidato) {
                 ? `${resultados.length} vaga(s) analisada(s) com base no seu perfil.`
                 : `${resultados.length} vaga(s) encontrada(s). Preencha e salve seu perfil para ver a compatibilidade.`
         );
+
+        if (candidato) {
+            exibirMelhorVaga(melhorVagaElemento, encontrarMelhorVaga(resultados));
+        }
     } catch (erro) {
         exibirStatusVagas(statusVagas, "Não foi possível carregar as vagas. Tente novamente mais tarde.");
     }

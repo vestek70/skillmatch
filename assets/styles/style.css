@@ -86,6 +86,19 @@ button:hover {
     color: #52606d;
 }
 
+.melhor-vaga {
+    margin: 0 0 1rem;
+    padding: 0.6rem 1rem;
+    background-color: #eff6ff;
+    border-left: 4px solid #2563eb;
+    font-weight: bold;
+    color: #1d4ed8;
+}
+
+.melhor-vaga:empty {
+    display: none;
+}
+
 /* Mobile-first: uma coluna por padrão, cartões ganham largura fixa a partir de telas maiores */
 .vagas-lista {
     display: flex;
