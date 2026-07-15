@@ -14,6 +14,8 @@ skillmatch-js/
 ├── assets/
 │   ├── dados/
 │   │   └── vagas.json           # Catálogo de vagas consumido via fetch
+│   ├── img/
+│   │   └── logo.svg             # Logo do header (alt informativo)
 │   ├── scripts/
 │   │   ├── dados.js             # Persistência: localStorage e fetch de vagas
 │   │   ├── motor.js             # Classes Vaga/VagaFrontEnd e engine de análise

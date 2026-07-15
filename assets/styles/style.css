@@ -20,6 +20,11 @@ footer {
     text-align: center;
 }
 
+.logo {
+    display: block;
+    margin: 0 auto 0.5rem;
+}
+
 main {
     flex: 1;
     display: flex;
