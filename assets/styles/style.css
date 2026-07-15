@@ -20,6 +20,11 @@ footer {
     text-align: center;
 }
 
+.logo {
+    display: block;
+    margin: 0 auto 0.5rem;
+}
+
 main {
     flex: 1;
     display: flex;
@@ -96,6 +101,18 @@ button:hover {
 }
 
 .melhor-vaga:empty {
+    display: none;
+}
+
+.recomendacao-estudo {
+    margin: 0 0 1rem;
+    padding: 0.6rem 1rem;
+    background-color: #fff7ed;
+    border-left: 4px solid #b45309;
+    color: #92400e;
+}
+
+.recomendacao-estudo:empty {
     display: none;
 }
 
