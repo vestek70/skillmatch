@@ -77,12 +77,12 @@ O projeto foi auditado com o **Lighthouse** (servido via `python -m http.server`
 
 | Categoria       | Nota |
 |-----------------|------|
-| Performance     | 99   |
+| Performance     | 100  |
 | Accessibility   | 100  |
 | Best Practices  | 100  |
 | SEO             | 100  |
 
-Antes de fechar o Accessibility/SEO em 100, dois ajustes foram necessários a partir do próprio relatório: adicionar `<meta name="description">` (faltava, derrubava o SEO) e um `<link rel="icon" href="data:,">` (evitava um 404 de `favicon.ico` que aparecia como erro no console e derrubava o Best Practices).
+Antes de fechar em 100 em todas as categorias, dois ajustes foram necessários a partir do próprio relatório: adicionar `<meta name="description">` (faltava, derrubava o SEO) e um `<link rel="icon" href="data:,">` (evitava um 404 de `favicon.ico` que aparecia como erro no console e derrubava o Best Practices).
 
 ---
 

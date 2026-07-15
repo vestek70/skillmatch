@@ -104,6 +104,18 @@ button:hover {
     display: none;
 }
 
+.recomendacao-estudo {
+    margin: 0 0 1rem;
+    padding: 0.6rem 1rem;
+    background-color: #fff7ed;
+    border-left: 4px solid #b45309;
+    color: #92400e;
+}
+
+.recomendacao-estudo:empty {
+    display: none;
+}
+
 /* Mobile-first: uma coluna por padrão, cartões ganham largura fixa a partir de telas maiores */
 .vagas-lista {
     display: flex;

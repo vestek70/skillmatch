@@ -87,3 +87,10 @@ export function encontrarMelhorVaga(resultados) {
         atual.percentual > melhor.percentual ? atual : melhor
     );
 }
+
+// RF05: junta as habilidades faltantes de todas as vagas e usa Set para
+// remover duplicatas, indicando o que estudar primeiro (aparece mais vezes).
+export function gerarRecomendacaoDeEstudo(resultados) {
+    const todasFaltantes = resultados.flatMap((resultado) => resultado.faltantes);
+    return [...new Set(todasFaltantes)];
+}
