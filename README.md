@@ -70,6 +70,20 @@ Como a aplicação usa `fetch` para carregar `assets/dados/vagas.json`, é neces
 
 ---
 
+##  Auditoria e Qualidade (Lighthouse)
+O projeto foi auditado com o **Lighthouse** (servido via `python -m http.server`, headless Chrome) para validar a marcação semântica, os `label for`/`id`, o `meta description` e a ausência de erros de console:
+
+| Categoria       | Nota |
+|-----------------|------|
+| Performance     | 99   |
+| Accessibility   | 100  |
+| Best Practices  | 100  |
+| SEO             | 100  |
+
+Antes de fechar o Accessibility/SEO em 100, dois ajustes foram necessários a partir do próprio relatório: adicionar `<meta name="description">` (faltava, derrubava o SEO) e um `<link rel="icon" href="data:,">` (evitava um 404 de `favicon.ico` que aparecia como erro no console e derrubava o Best Practices).
+
+---
+
 ##  Ferramentas Utilizadas
 - **Editor de Código:** VS Code
   - *Extensões utilizadas/recomendadas:* Live Server, ESLint, e JavaScript (ES6) code snippets.
