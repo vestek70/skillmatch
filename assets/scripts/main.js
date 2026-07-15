@@ -1,6 +1,13 @@
 import { salvarCandidato, carregarCandidato, carregarVagas } from "./dados.js";
 import { analisarVagas, encontrarMelhorVaga, gerarRecomendacaoDeEstudo } from "./motor.js";
-import { renderizarVagas, exibirStatusVagas, exibirMelhorVaga, exibirRecomendacaoEstudo } from "./ui.js";
+import {
+    renderizarVagas,
+    exibirStatusVagas,
+    exibirMelhorVaga,
+    exibirRecomendacaoEstudo,
+    exibirErrosFormulario,
+    exibirResumoPerfil
+} from "./ui.js";
 
 const formulario = document.getElementById("form-candidato");
 const campoNome = document.getElementById("nome");
@@ -8,6 +15,14 @@ const campoArea = document.getElementById("area");
 const campoHabilidades = document.getElementById("habilidades");
 const campoExperiencia = document.getElementById("experiencia");
 const mensagemStatus = document.getElementById("mensagem-status");
+const resumoPerfilElemento = document.getElementById("perfil-resumo");
+
+const camposComErro = [
+    { input: campoNome, elementoErro: document.getElementById("erro-nome") },
+    { input: campoArea, elementoErro: document.getElementById("erro-area") },
+    { input: campoHabilidades, elementoErro: document.getElementById("erro-habilidades") },
+    { input: campoExperiencia, elementoErro: document.getElementById("erro-experiencia") }
+];
 
 const containerVagas = document.getElementById("lista-vagas");
 const statusVagas = document.getElementById("status-vagas");
@@ -26,6 +41,28 @@ function preencherFormulario(candidato) {
     campoArea.value = candidato.area;
     campoHabilidades.value = candidato.habilidades.join(", ");
     campoExperiencia.value = candidato.experienciaMeses;
+}
+
+// RF10: validação manual (form tem novalidate) para poder mostrar a
+// mensagem de erro em texto, ligada ao campo via aria-describedby,
+// em vez de depender só do balão nativo do navegador.
+function validarCandidato(candidato) {
+    const erros = {};
+
+    if (!candidato.nome) {
+        erros[campoNome.id] = "Informe seu nome completo.";
+    }
+    if (!candidato.area) {
+        erros[campoArea.id] = "Informe sua área de atuação.";
+    }
+    if (candidato.habilidades.length === 0) {
+        erros[campoHabilidades.id] = "Informe ao menos uma habilidade.";
+    }
+    if (Number.isNaN(candidato.experienciaMeses) || candidato.experienciaMeses < 0) {
+        erros[campoExperiencia.id] = "Informe um número de meses válido (0 ou mais).";
+    }
+
+    return erros;
 }
 
 async function carregarEExibirVagas(candidato) {
@@ -74,8 +111,18 @@ function tratarEnvioFormulario(evento) {
         experienciaMeses: Number(campoExperiencia.value)
     };
 
+    const erros = validarCandidato(candidato);
+    exibirErrosFormulario(camposComErro, erros);
+
+    if (Object.keys(erros).length > 0) {
+        mensagemStatus.textContent = "Corrija os campos destacados antes de salvar.";
+        camposComErro.find(({ input }) => erros[input.id])?.input.focus();
+        return;
+    }
+
     salvarCandidato(candidato);
     mensagemStatus.textContent = "Perfil salvo com sucesso!";
+    exibirResumoPerfil(resumoPerfilElemento, candidato);
     carregarEExibirVagas(candidato);
 }
 
@@ -83,6 +130,7 @@ function iniciar() {
     const candidatoSalvo = carregarCandidato();
     if (candidatoSalvo) {
         preencherFormulario(candidatoSalvo);
+        exibirResumoPerfil(resumoPerfilElemento, candidatoSalvo);
     }
 
     formulario.addEventListener("submit", tratarEnvioFormulario);
