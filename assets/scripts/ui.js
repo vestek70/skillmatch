@@ -12,6 +12,15 @@ export function exibirMelhorVaga(elementoMelhorVaga, resultado) {
     elementoMelhorVaga.textContent = `Vaga mais compatível: ${vaga.cargo} — ${vaga.empresa} (${percentual}%)`;
 }
 
+export function exibirRecomendacaoEstudo(elementoRecomendacao, habilidades) {
+    if (!habilidades || habilidades.length === 0) {
+        elementoRecomendacao.textContent = "";
+        return;
+    }
+
+    elementoRecomendacao.textContent = `Recomendação de estudo: priorize ${habilidades.join(", ")}, pois essas habilidades aparecem nas vagas analisadas.`;
+}
+
 export function renderizarVagas(container, resultados) {
     container.innerHTML = "";
 
