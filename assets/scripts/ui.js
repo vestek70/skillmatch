@@ -21,6 +21,31 @@ export function exibirRecomendacaoEstudo(elementoRecomendacao, habilidades) {
     elementoRecomendacao.textContent = `Recomendação de estudo: priorize ${habilidades.join(", ")}, pois essas habilidades aparecem nas vagas analisadas.`;
 }
 
+// RF10: para cada campo com erro, mostra a mensagem no <span role="alert">
+// associado (via aria-describedby) e marca aria-invalid no input; campos
+// sem erro em "erros" são limpos, então basta chamar isso a cada tentativa.
+export function exibirErrosFormulario(camposComErro, erros) {
+    camposComErro.forEach(({ input, elementoErro }) => {
+        const mensagem = erros[input.id] || "";
+        elementoErro.textContent = mensagem;
+
+        if (mensagem) {
+            input.setAttribute("aria-invalid", "true");
+        } else {
+            input.removeAttribute("aria-invalid");
+        }
+    });
+}
+
+export function exibirResumoPerfil(elementoResumo, candidato) {
+    if (!candidato) {
+        elementoResumo.textContent = "";
+        return;
+    }
+
+    elementoResumo.textContent = `Perfil: ${candidato.nome} · ${candidato.area} · ${candidato.experienciaMeses} mês(es) de experiência.`;
+}
+
 export function renderizarVagas(container, resultados) {
     container.innerHTML = "";
 

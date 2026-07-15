@@ -65,6 +65,30 @@ input {
     font-size: 1rem;
 }
 
+input[aria-invalid="true"] {
+    border-color: #b91c1c;
+}
+
+.erro-campo {
+    display: block;
+    min-height: 1.1em;
+    margin-top: 0.25rem;
+    font-size: 0.85rem;
+    color: #b91c1c;
+}
+
+.perfil-resumo {
+    margin-top: 1rem;
+    padding: 0.6rem 1rem;
+    background-color: #f0fdf4;
+    border-left: 4px solid #15803d;
+    font-size: 0.95rem;
+}
+
+.perfil-resumo:empty {
+    display: none;
+}
+
 button {
     background-color: #2563eb;
     color: #ffffff;

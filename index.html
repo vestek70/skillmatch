@@ -19,30 +19,35 @@
         <section aria-labelledby="titulo-formulario">
             <h2 id="titulo-formulario">Perfil do Candidato</h2>
 
-            <form id="form-candidato">
+            <form id="form-candidato" novalidate>
                 <div class="campo">
                     <label for="nome">Nome completo</label>
-                    <input type="text" id="nome" name="nome" required />
+                    <input type="text" id="nome" name="nome" required aria-describedby="erro-nome" />
+                    <span id="erro-nome" class="erro-campo" role="alert"></span>
                 </div>
 
                 <div class="campo">
                     <label for="area">Área de atuação</label>
-                    <input type="text" id="area" name="area" required />
+                    <input type="text" id="area" name="area" required aria-describedby="erro-area" />
+                    <span id="erro-area" class="erro-campo" role="alert"></span>
                 </div>
 
                 <div class="campo">
                     <label for="habilidades">Habilidades (separadas por vírgula)</label>
-                    <input type="text" id="habilidades" name="habilidades" placeholder="JavaScript, HTML, CSS" required />
+                    <input type="text" id="habilidades" name="habilidades" placeholder="JavaScript, HTML, CSS" required aria-describedby="erro-habilidades" />
+                    <span id="erro-habilidades" class="erro-campo" role="alert"></span>
                 </div>
 
                 <div class="campo">
                     <label for="experiencia">Experiência (em meses)</label>
-                    <input type="number" id="experiencia" name="experiencia" min="0" required />
+                    <input type="number" id="experiencia" name="experiencia" min="0" required aria-describedby="erro-experiencia" />
+                    <span id="erro-experiencia" class="erro-campo" role="alert"></span>
                 </div>
 
                 <button type="submit">Salvar Perfil</button>
 
                 <p id="mensagem-status" role="status" aria-live="polite"></p>
+                <div id="perfil-resumo" class="perfil-resumo" aria-live="polite"></div>
             </form>
         </section>
 
