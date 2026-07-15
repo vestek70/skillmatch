@@ -9,6 +9,8 @@ export class Vaga {
     }
 
     calcularCompatibilidade(habilidadesCandidato) {
+        // Compara this.requisitos (da vaga) com as habilidades do candidato
+        // para separar o que ele já tem do que ainda precisa aprender.
         const encontradas = this.requisitos.filter((requisito) =>
             habilidadesCandidato.includes(requisito)
         );
@@ -47,6 +49,8 @@ export class VagaFrontEnd extends Vaga {
     }
 }
 
+// RF08: Closure — "total" fica isolado dentro da função e só é acessível
+// através de "contar", que o incrementa a cada vaga analisada.
 function criarContadorDeAnalises() {
     let total = 0;
     return function contar() {
@@ -76,6 +80,8 @@ export function analisarVagas(vagasDados, habilidadesCandidato) {
     });
 }
 
+// RF06: reduce percorre todos os resultados comparando dois de cada vez
+// e mantém apenas o de maior percentual, terminando com um único vencedor.
 export function encontrarMelhorVaga(resultados) {
     return resultados.reduce((melhor, atual) =>
         atual.percentual > melhor.percentual ? atual : melhor

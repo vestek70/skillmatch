@@ -59,8 +59,10 @@ async function carregarEExibirVagas(candidato) {
     }
 }
 
+// RF08: Callback — tratarEnvioFormulario é passada como referência para
+// addEventListener em iniciar() e só é chamada quando o evento "submit" ocorre.
 function tratarEnvioFormulario(evento) {
-    evento.preventDefault();
+    evento.preventDefault(); // impede o recarregamento padrão da página
 
     const candidato = {
         nome: campoNome.value.trim(),

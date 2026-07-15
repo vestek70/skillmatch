@@ -13,6 +13,8 @@ export function carregarCandidato() {
 export async function carregarVagas() {
     const resposta = await fetch(CAMINHO_VAGAS);
 
+    // fetch só rejeita a Promise em falha de rede; um 404/500 ainda chega
+    // aqui como resposta "normal", por isso checamos resposta.ok manualmente.
     if (!resposta.ok) {
         throw new Error(`Falha ao buscar vagas: status ${resposta.status}`);
     }
