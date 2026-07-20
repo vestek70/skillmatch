@@ -98,7 +98,6 @@ Antes de fechar em 100 em todas as categorias, dois ajustes foram necessários a
 
 - **Repositório GitHub:** https://github.com/vestek70/skillmatch.git
 - **Quadro Kanban (Trello):** https://trello.com/invite/b/6a09dbd712664b9d9c68cb7d/ATTIb763ec6a023c4defeedf4096a03c02589F64AE47/skillmatch-js-simulador-de-compatibilidade-com-vaga-front-end-junior 
-- **Vídeo de Apresentação:** https://drive.google.com/file/d/1CQAxXs_Y2JoOaqMmAOkQXWZCrNGn6vnK/view?usp=sharing
-
+- **Vídeo de Apresentação:** https://drive.google.com/file/d/1GPzq__1JDOfpuFa3CpXPd8OhpngFbLk_/view?usp=sharing
 ---
 Developed by **Konstantin Borisov** 
